@@ -5,10 +5,10 @@
   
   <entry>
     <title>修复阿米洛键盘在linux下fn键自动生效的问题</title>
-    <link href="undefined2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <url>2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <link href="/2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <url>/2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     
-    <content type="html"><![CDATA[<p>换上阿米洛键盘之后，发现在linux下fn 键自动锁定了，导致F1-F12的键都不能用了，很不方便。因为我F12键绑定了yakuake了。然后想用evtest把scan code读出来，然后自己修改（<a href="https://www.bilibili.com/read/cv5156572">可以这篇文章</a>）。发现第一排键没有scan code……尴尬。。</p><p>后来在继续搜索的时候，发现可能被识别成apple 键盘了，导致fn 被锁定。于是直接做如下修改：</p><p>临时（重启之后会失效）:</p><p>禁用fn （也就是变成fn+f键触发对应的效果）</p><p><code>echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p><p>启用fn：</p><p><code>echo 1 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p><p>永久：</p><pre><code>echo options hid_apple fnmode=0 | sudo tee -a /etc/modprobe.d/hid_apple.confsudo update-initramfs -u -k all</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>换上阿米洛键盘之后，发现在linux下fn 键自动锁定了，导致F1-F12的键都不能用了，很不方便。因为我F12键绑定了yakuake了。然后想用evtest把scan code读出来，然后自己修改（<a href="https://www.bilibili.com/read/cv5156572">可以这篇文章</a>）。发现第一排键没有scan code……尴尬。。</p><p>后来在继续搜索的时候，发现可能被识别成apple 键盘了，导致fn 被锁定。于是直接做如下修改：</p><p>临时（重启之后会失效）:</p><p>禁用fn （也就是变成fn+f键触发对应的效果）</p><p><code>echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p><p>启用fn：</p><p><code>echo 1 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p><p>永久：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">echo</span> <span class="hljs-keyword">options</span> hid_apple fnmode=<span class="hljs-number">0</span> | sudo tee -<span class="hljs-keyword">a</span> /etc/modprobe.d/hid_apple.<span class="hljs-keyword">conf</span><br>sudo <span class="hljs-keyword">update</span>-initramfs -<span class="hljs-keyword">u</span> -<span class="hljs-keyword">k</span> <span class="hljs-keyword">all</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="undefined2021/08/01/hello-world/"/>
-    <url>2021/08/01/hello-world/</url>
+    <link href="/2021/08/01/hello-world/"/>
+    <url>/2021/08/01/hello-world/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>]]></content>
     
     
     
@@ -31,8 +31,8 @@
   
   <entry>
     <title>first-post</title>
-    <link href="undefined2019/09/16/first-post/"/>
-    <url>2019/09/16/first-post/</url>
+    <link href="/2019/09/16/first-post/"/>
+    <url>/2019/09/16/first-post/</url>
     
     <content type="html"><![CDATA[]]></content>
     
