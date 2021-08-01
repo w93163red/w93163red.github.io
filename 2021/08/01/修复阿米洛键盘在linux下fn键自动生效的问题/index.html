@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="Lingxiang &#34;LinG&#34; Wang">
   <meta name="keywords" content="">
-  <title>Page not found ~ LinG Tech Notes</title>
+  <title>修复阿米洛键盘在linux下fn键自动生效的问题 ~ LinG Tech Notes</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"  >
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"  >
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css"  >
@@ -33,7 +33,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -104,6 +104,9 @@
             </span>
 
             
+              <br>
+              <p>Sunday, August 1st 2021, 1:33 pm</p>
+            
           </div>
 
           
@@ -116,13 +119,62 @@
     
       
 
-<script>
-  function redirect() {
-    location.href = "/";
-  }
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <p>换上阿米洛键盘之后，发现在linux下fn 键自动锁定了，导致F1-F12的键都不能用了，很不方便。因为我F12键绑定了yakuake了。然后想用evtest把scan code读出来，然后自己修改（<a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv5156572">可以这篇文章</a>）。发现第一排键没有scan code……尴尬。。</p>
+<p>后来在继续搜索的时候，发现可能被识别成apple 键盘了，导致fn 被锁定。于是直接做如下修改：</p>
+<p>临时（重启之后会失效）:</p>
+<p>禁用fn （也就是变成fn+f键触发对应的效果）</p>
+<p><code>echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p>
+<p>启用fn：</p>
+<p><code>echo 1 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p>
+<p>永久：</p>
+<pre><code>echo options hid_apple fnmode=0 | sudo tee -a /etc/modprobe.d/hid_apple.conf
+sudo update-initramfs -u -k all
+</code></pre>
 
-  //setTimeout(redirect, 3000)
-</script>
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
+
     
   </main>
 
@@ -176,6 +228,11 @@
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -191,7 +248,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Page not found&nbsp;",
+        "修复阿米洛键盘在linux下fn键自动生效的问题&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
