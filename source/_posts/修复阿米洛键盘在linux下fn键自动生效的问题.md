@@ -1,7 +1,11 @@
 ---
 title: 修复阿米洛键盘在linux下fn键自动生效的问题
 date: 2021-08-01 13:33:35
-tags:
+tags: 
+    - 配置
+    - Linux
+categories:
+    - Linux 配置
 ---
 
 换上阿米洛键盘之后，发现在linux下fn 键自动锁定了，导致F1-F12的键都不能用了，很不方便。因为我F12键绑定了yakuake了。然后想用evtest把scan code读出来，然后自己修改（[可以这篇文章](https://www.bilibili.com/read/cv5156572)）。发现第一排键没有scan code……尴尬。。
