@@ -11,6 +11,20 @@
     <content type="html"><![CDATA[<p>换上阿米洛键盘之后，发现在linux下fn 键自动锁定了，导致F1-F12的键都不能用了，很不方便。因为我F12键绑定了yakuake了。然后想用evtest把scan code读出来，然后自己修改（<a href="https://www.bilibili.com/read/cv5156572">可以这篇文章</a>）。发现第一排键没有scan code……尴尬。。</p><p>后来在继续搜索的时候，发现可能被识别成apple 键盘了，导致fn 被锁定。于是直接做如下修改：</p><p>临时（重启之后会失效）:</p><p>禁用fn （也就是变成fn+f键触发对应的效果）</p><p><code>echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p><p>启用fn：</p><p><code>echo 1 | sudo tee /sys/module/hid_apple/parameters/fnmode</code></p><p>永久：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">echo</span> <span class="hljs-keyword">options</span> hid_apple fnmode=<span class="hljs-number">0</span> | sudo tee -<span class="hljs-keyword">a</span> /etc/modprobe.d/hid_apple.<span class="hljs-keyword">conf</span><br>sudo <span class="hljs-keyword">update</span>-initramfs -<span class="hljs-keyword">u</span> -<span class="hljs-keyword">k</span> <span class="hljs-keyword">all</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>Linux 配置</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>配置</tag>
+      
+    </tags>
     
   </entry>
   
