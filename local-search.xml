@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>rsync 加速迁移home目录</title>
+    <link href="/2021/08/05/rsync-%E5%8A%A0%E9%80%9F%E8%BF%81%E7%A7%BBhome%E7%9B%AE%E5%BD%95/"/>
+    <url>/2021/08/05/rsync-%E5%8A%A0%E9%80%9F%E8%BF%81%E7%A7%BBhome%E7%9B%AE%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<p>最近经常需要去迁移home目录，所以记录一下快速迁移home路径使用的命令：</p><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">rsync -avAXEWSlHh <span class="hljs-string">/source</span> <span class="hljs-string">/destination</span> <span class="hljs-params">--no-compress</span> <span class="hljs-params">--info=progress2</span> <span class="hljs-params">--dry-run</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>修复阿米洛键盘在linux下fn键自动生效的问题</title>
     <link href="/2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <url>/2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/</url>
@@ -13,7 +38,7 @@
     
     <categories>
       
-      <category>Linux 配置</category>
+      <category>Linux</category>
       
     </categories>
     
@@ -21,8 +46,6 @@
     <tags>
       
       <tag>Linux</tag>
-      
-      <tag>配置</tag>
       
     </tags>
     
