@@ -22,5 +22,4 @@ openssl crl2pkcs7 -nocrl -certfile bundle.0.pem | openssl pkcs7 -print_certs -te
 3. 命令行来验证证书链的合法性（可用于self signed certificate)
 ```
 openssl verify -verbose -CAfile <(cat Intermediate.pem RootCert.pem) UserCert.pem
-
 ```
