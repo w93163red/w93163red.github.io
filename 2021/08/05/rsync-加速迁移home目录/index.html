@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      40 字
+      48 字
     </span>
   
 
@@ -229,7 +229,7 @@
             
             <div class="markdown-body">
               <p>最近经常需要去迁移home目录，所以记录一下快速迁移home路径使用的命令：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">rsync -avAXEWSlHh <span class="hljs-string">/source</span> <span class="hljs-string">/destination</span> <span class="hljs-params">--no-compress</span> <span class="hljs-params">--info=progress2</span> <span class="hljs-params">--dry-run</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">rsync -e <span class="hljs-string">&quot;ssh -p port&quot;</span> -avAXEWSlHh <span class="hljs-params">--exclude=dir1</span> <span class="hljs-string">/source</span> <span class="hljs-string">/destination</span> <span class="hljs-params">--no-compress</span> <span class="hljs-params">--info=progress2</span> <span class="hljs-params">--dry-run</span><br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
