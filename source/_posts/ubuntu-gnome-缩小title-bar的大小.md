@@ -51,4 +51,4 @@ window.ssd headerbar.titlebar {
 ```
 
 改完之后的效果:
-![screenshot](Post-Asset-Folder/screenshot-20210809-104120.png)
+![screenshot](/img/screenshot-20210809-104120.png)
