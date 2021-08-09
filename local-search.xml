@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>ubuntu gnome 缩小title bar的大小</title>
+    <link href="/2021/08/09/ubuntu-gnome-%E7%BC%A9%E5%B0%8Ftitle-bar%E7%9A%84%E5%A4%A7%E5%B0%8F/"/>
+    <url>/2021/08/09/ubuntu-gnome-%E7%BC%A9%E5%B0%8Ftitle-bar%E7%9A%84%E5%A4%A7%E5%B0%8F/</url>
+    
+    <content type="html"><![CDATA[<p>ubuntu 默认gnome配置下，title bar感觉有点太大了，没必要占用那么大的空间。网上搜了下，可以改之.</p><p>以下配置来自<a href="https://github.com/JackKelly/linux_home/blob/master/.config/gtk-3.0/gtk.css">https://github.com/JackKelly/linux_home/blob/master/.config/gtk-3.0/gtk.css</a></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* From https://unix.stackexchange.com/a/343643 with modifications described in the comments */</span><br><br><span class="hljs-comment">/* shrink headerbars (don&#x27;t forget semicolons after each property) */</span><br>headerbar &#123;<br>    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">0px</span>;<br>    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">2px</span>; <span class="hljs-comment">/* same as childrens vertical margins for nicer proportions */</span><br>    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">2px</span>;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#2d2d2d</span>;<br>&#125;<br><br>headerbar entry,<br>headerbar spinbutton,<br>headerbar <span class="hljs-selector-tag">button</span>,<br>headerbar separator &#123;<br>    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>; <span class="hljs-comment">/* same as headerbar side padding for nicer proportions */</span><br>&#125;<br><br><span class="hljs-comment">/* shrink ssd titlebars */</span><br><span class="hljs-selector-class">.default-decoration</span> &#123;<br>    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* let the entry and button drive the titlebar size */</span><br>    <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;<br>    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#2d2d2d</span>;<br>&#125;<br><br><span class="hljs-selector-class">.default-decoration</span> <span class="hljs-selector-class">.titlebutton</span> &#123;<br>    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">0px</span>; <span class="hljs-comment">/* tweak these two props to reduce button size */</span><br>    <span class="hljs-attribute">min-width</span>: <span class="hljs-number">0px</span>;<br>&#125;<br><br>window<span class="hljs-selector-class">.ssd</span> headerbar<span class="hljs-selector-class">.titlebar</span> &#123;<br>    <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">3px</span>;<br>    <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">3px</span>;<br>    <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">6px</span>;<br>    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">6px</span>;<br>    <span class="hljs-attribute">min-height</span>: <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>改完之后的效果:<br><img src="Post-Asset-Folder/screenshot-20210809-104120.png" alt="screenshot"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>OpenSSL 证书验证cheat sheet</title>
     <link href="/2021/08/08/OpenSSL-%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81cheat-sheet/"/>
     <url>/2021/08/08/OpenSSL-%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81cheat-sheet/</url>
