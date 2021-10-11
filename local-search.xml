@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>cargo vendor更新依赖</title>
+    <link href="/2021/10/11/cargo-vendor%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96/"/>
+    <url>/2021/10/11/cargo-vendor%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96/</url>
+    
+    <content type="html"><![CDATA[<p>假设是一个git 依赖，私有源需<code>CARGO_NET_GIT_FETCH_WITH_CLI=true</code>:</p><ol><li>cargo update -p [package] –precise [commit-id]</li><li>cargo vendor</li></ol><p>非git依赖:</p><ol><li>cargo update -p [package]</li><li>cargo vendor</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>rust</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>程序员修炼之道笔记</title>
     <link href="/2021/09/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/"/>
     <url>/2021/09/06/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%E7%AC%94%E8%AE%B0/</url>
