@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>wslg 添加systemd 并解决can&#39;t open display</title>
+    <link href="/2021/11/04/wslg-%E6%B7%BB%E5%8A%A0systemd-%E5%B9%B6%E8%A7%A3%E5%86%B3can-t-open-display/"/>
+    <url>/2021/11/04/wslg-%E6%B7%BB%E5%8A%A0systemd-%E5%B9%B6%E8%A7%A3%E5%86%B3can-t-open-display/</url>
+    
+    <content type="html"><![CDATA[<ol><li><code>git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script</code></li><li><code>bash ubuntu-wsl2-systemd-script.sh</code><br>使用zsh的情况下，需要在zshrc添加<code>source /usr/sbin/start-systemd-namespace</code>，使得systemd 自动载入<br>因为引入systemd之后会把wslg的X11 的东西弄挂，需要重新连一次<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">export DISPLAY=:<span class="hljs-number">0</span><br>sudo rm -rf <span class="hljs-regexp">/tmp/</span>.X11-unix<br>ln -s <span class="hljs-regexp">/mnt/</span>wslg<span class="hljs-regexp">/.X11-unix /</span>tmp/.X11-unix<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>wslg</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Oracle JDK 1.8 ubuntu 安装</title>
     <link href="/2021/11/03/Oracle-JDK-1-8-ubuntu-%E5%AE%89%E8%A3%85/"/>
     <url>/2021/11/03/Oracle-JDK-1-8-ubuntu-%E5%AE%89%E8%A3%85/</url>
