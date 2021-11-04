@@ -19,4 +19,4 @@ ln -s /mnt/wslg/.X11-unix /tmp/.X11-unix
 
 之后就可以正常的`sudo snap install microk8s --classic`。
 
-如果安装microk8s安装失败，`sudo apt purge snapd && sudo apt install snapd`
+如果安装microk8s安装失败，`sudo apt purge snapd && sudo apt install snapd`即可
