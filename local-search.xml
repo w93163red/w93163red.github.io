@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Oracle JDK 1.8 ubuntu 安装</title>
+    <link href="/2021/11/03/Oracle-JDK-1-8-ubuntu-%E5%AE%89%E8%A3%85/"/>
+    <url>/2021/11/03/Oracle-JDK-1-8-ubuntu-%E5%AE%89%E8%A3%85/</url>
+    
+    <content type="html"><![CDATA[<ol><li><code>sudo mkdir -p /usr/lib/jvm</code></li><li><code>sudo tar zxvf jdk-version-linux-x64.tar.gz -C /usr/lib/jvm</code></li><li><code>sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &quot;/usr/lib/jvm/jdk1.8.0_version/bin/java&quot; 1</code></li><li><code>sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_version/bin/java</code></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>cargo vendor更新依赖</title>
     <link href="/2021/10/11/cargo-vendor%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96/"/>
     <url>/2021/10/11/cargo-vendor%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96/</url>
