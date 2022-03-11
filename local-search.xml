@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>debian testing xvnc 配置</title>
+    <link href="/2022/03/11/debian-testing-xvnc-%E9%85%8D%E7%BD%AE/"/>
+    <url>/2022/03/11/debian-testing-xvnc-%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p>记录一下成功配置xrdp + xvnc 下的步骤：</p><ol><li><p><code>sudo ap install xrdp tigervnc-standalone-server dbus-x11</code></p></li><li><p>改端口号： <code>sudo sed -i &#39;s/3389/3390/g&#39; /etc/xrdp/xrdp.ini</code>    </p></li><li><p>改bpp： <code>sudo sed -i &#39;s/max_bpp=32/#max_bpp=32\nmax_bpp=128/g&#39;</code></p></li><li><p>KDE-plasma的配置</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># ~/.xsession<br><br>unset DBUS_SESSION_BUS_ADDRESS<br>unset XDG_RUNTIME_DIR<br>startplasma-x11<br>export XDG_SESSION_DESKTOP=KDE<br>export XDG_DATA_DIRS=<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/plasma:/u</span>sr<span class="hljs-regexp">/local/</span>share:<span class="hljs-regexp">/usr/</span>share:<span class="hljs-regexp">/var/</span>lib<span class="hljs-regexp">/snapd/</span>desktop<br>export XDG_CONFIG_DIRS=<span class="hljs-regexp">/etc/</span>xdg<span class="hljs-regexp">/xdg-plasma:/</span>etc<span class="hljs-regexp">/xdg:/u</span>sr<span class="hljs-regexp">/share/</span>kubuntu-<span class="hljs-keyword">default</span>-settings/kf5-settings<br><br># ~<span class="hljs-regexp">/.vnc/</span>startup<br><br>#!<span class="hljs-regexp">/bin/</span>sh<br><br>unset SESSION_MANAGER<br>unset DBUS_SESSION_BUS_ADDRESS<br><br><span class="hljs-regexp">/usr/</span>bin/startplasma-x11 &amp;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>wslg 添加systemd 并解决can&#39;t open display 以及安装microk8s</title>
     <link href="/2021/11/04/wslg-%E6%B7%BB%E5%8A%A0systemd-%E5%B9%B6%E8%A7%A3%E5%86%B3can-t-open-display/"/>
     <url>/2021/11/04/wslg-%E6%B7%BB%E5%8A%A0systemd-%E5%B9%B6%E8%A7%A3%E5%86%B3can-t-open-display/</url>
