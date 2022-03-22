@@ -178,6 +178,50 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/" target="_self">
+          debian NUC 修复没有声音 (Only dummy output)
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/" target="_self">
+          
+          
+            
+          
+          搞了好久，记录一下过程；系统是INTEL NUC9，声卡是intel自带的
+1234567# 看下具体报错的原因，报错当中就会显示应该去哪个git repo修复1. sudo dmesg 2. 按照https://github.com/thesofproject/sof-bin 上面的来安装3. sudo reboot
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-03-22 09:40" pubdate>
+              2022-03-22
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2022/03/11/debian-testing-xvnc-%E9%85%8D%E7%BD%AE/" target="_self">
           debian testing xvnc 配置
         </a>
@@ -644,60 +688,13 @@ cargo vendor
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/" target="_self">
-          修复阿米洛键盘在linux下fn键自动生效的问题
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/08/01/%E4%BF%AE%E5%A4%8D%E9%98%BF%E7%B1%B3%E6%B4%9B%E9%94%AE%E7%9B%98%E5%9C%A8linux%E4%B8%8Bfn%E9%94%AE%E8%87%AA%E5%8A%A8%E7%94%9F%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/" target="_self">
-          
-          
-            
-          
-          换上阿米洛键盘之后，发现在linux下fn 键自动锁定了，导致F1-F12的键都不能用了，很不方便。因为我F12键绑定了yakuake了。然后想用evtest把scan code读出来，然后自己修改（可以这篇文章）。发现第一排键没有scan code……尴尬。。
-后来在继续搜索的时候，发现可能被识别成apple 键盘了，导致fn 被锁定。于是直接做如下修改：
-临时（重启之后会失效）:
-禁用fn （
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-01 17:33" pubdate>
-              2021-08-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Linux/">Linux</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/Linux/">Linux</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
 
 
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 

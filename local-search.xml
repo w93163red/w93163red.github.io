@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>debian NUC 修复没有声音 (Only dummy output)</title>
+    <link href="/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/"/>
+    <url>/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/</url>
+    
+    <content type="html"><![CDATA[<p>搞了好久，记录一下过程；系统是INTEL NUC9，声卡是intel自带的</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 看下具体报错的原因，报错当中就会显示应该去哪个git repo修复</span><br>1. sudo dmesg <br><br>2. 按照https://github.com/thesofproject/sof-bin 上面的来安装<br><br>3. sudo reboot<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>debian testing xvnc 配置</title>
     <link href="/2022/03/11/debian-testing-xvnc-%E9%85%8D%E7%BD%AE/"/>
     <url>/2022/03/11/debian-testing-xvnc-%E9%85%8D%E7%BD%AE/</url>

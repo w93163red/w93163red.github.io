@@ -18,7 +18,7 @@
   <meta name="author" content="LinG">
   <meta name="keywords" content="">
   
-  <title>debian testing xvnc 配置 - LinG Notes</title>
+  <title>debian NUC 修复没有声音 (Only dummy output) - LinG Notes</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="debian testing xvnc 配置">
+            <span class="h2" id="subtitle" title="debian NUC 修复没有声音 (Only dummy output)">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-11 15:56" pubdate>
-        2022年3月11日 下午
+      <time datetime="2022-03-22 09:40" pubdate>
+        2022年3月22日 上午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      105 字
+      69 字
     </span>
   
 
@@ -225,21 +225,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">debian testing xvnc 配置</h1>
+            <h1 style="display: none">debian NUC 修复没有声音 (Only dummy output)</h1>
             
             <div class="markdown-body">
-              <p>记录一下成功配置xrdp + xvnc 下的步骤：</p>
-<ol>
-<li><p><code>sudo ap install xrdp tigervnc-standalone-server dbus-x11</code></p>
-</li>
-<li><p>改端口号： <code>sudo sed -i &#39;s/3389/3390/g&#39; /etc/xrdp/xrdp.ini</code>    </p>
-</li>
-<li><p>改bpp： <code>sudo sed -i &#39;s/max_bpp=32/#max_bpp=32\nmax_bpp=128/g&#39;</code></p>
-</li>
-<li><p>KDE-plasma的配置</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># ~/.xsession<br><br>unset DBUS_SESSION_BUS_ADDRESS<br>unset XDG_RUNTIME_DIR<br>startplasma-x11<br>export XDG_SESSION_DESKTOP=KDE<br>export XDG_DATA_DIRS=<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/plasma:/u</span>sr<span class="hljs-regexp">/local/</span>share:<span class="hljs-regexp">/usr/</span>share:<span class="hljs-regexp">/var/</span>lib<span class="hljs-regexp">/snapd/</span>desktop<br>export XDG_CONFIG_DIRS=<span class="hljs-regexp">/etc/</span>xdg<span class="hljs-regexp">/xdg-plasma:/</span>etc<span class="hljs-regexp">/xdg:/u</span>sr<span class="hljs-regexp">/share/</span>kubuntu-<span class="hljs-keyword">default</span>-settings/kf5-settings<br><br># ~<span class="hljs-regexp">/.vnc/</span>startup<br><br>#!<span class="hljs-regexp">/bin/</span>sh<br><br>unset SESSION_MANAGER<br>unset DBUS_SESSION_BUS_ADDRESS<br><br><span class="hljs-regexp">/usr/</span>bin/startplasma-x11 &amp;<br></code></pre></td></tr></table></figure></li>
-</ol>
-
+              <p>搞了好久，记录一下过程；系统是INTEL NUC9，声卡是intel自带的</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 看下具体报错的原因，报错当中就会显示应该去哪个git repo修复</span><br>1. sudo dmesg <br><br>2. 按照https://github.com/thesofproject/sof-bin 上面的来安装<br><br>3. sudo reboot<br><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -249,7 +239,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                      <a class="hover-with-bg" href="/tags/linux/">linux</a>
                     
                   </div>
                 
@@ -266,18 +256,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">debian NUC 修复没有声音 (Only dummy output)</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/11/04/wslg-%E6%B7%BB%E5%8A%A0systemd-%E5%B9%B6%E8%A7%A3%E5%86%B3can-t-open-display/">
-                        <span class="hidden-mobile">wslg 添加systemd 并解决can't open display 以及安装microk8s</span>
+                      <a href="/2022/03/11/debian-testing-xvnc-%E9%85%8D%E7%BD%AE/">
+                        <span class="hidden-mobile">debian testing xvnc 配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
