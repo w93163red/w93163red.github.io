@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>debian rustdesk-server 开机自启动</title>
+    <link href="/2022/05/12/debian-rustdesk-server-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
+    <url>/2022/05/12/debian-rustdesk-server-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</url>
+    
+    <content type="html"><![CDATA[<ol><li>clone rustdesk-server-demo <code>https://github.com/rustdesk/rustdesk-server-demo.git</code></li><li>提前编译好 <code>cargo build</code></li><li>写一个脚本 <code>run_rustserver.sh</code> ，内容如下：<br><code>IP=192.168.50.77  /home/ling/code/rustdesk-server-demo/target/debug/rustdesk-server</code></li><li>在<code>/etc/systemd/system</code>下，创建一个rustdesk-server.service 文件，内容如下：<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[Unit]</span><br><span class="hljs-attr">Description</span>=Rust Server<br><br><span class="hljs-section">[Service]</span><br><span class="hljs-attr">Type</span>=simple<br><span class="hljs-attr">ExecStart</span>=/bin/bash /home/ling/run_rustserver.sh<br><br><span class="hljs-section">[Install]</span><br><span class="hljs-attr">WantedBy</span>=multi-user.target <br></code></pre></td></tr></table></figure></li><li><code>chmod 0644 rustdesk-server.service</code></li><li><code>systemctl enable rustdesk-server.service</code></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>debian 解决盒盖之后屏幕顿卡</title>
     <link href="/2022/05/12/debian-%E8%A7%A3%E5%86%B3%E7%9B%92%E7%9B%96%E4%B9%8B%E5%90%8E%E5%B1%8F%E5%B9%95%E9%A1%BF%E5%8D%A1/"/>
     <url>/2022/05/12/debian-%E8%A7%A3%E5%86%B3%E7%9B%92%E7%9B%96%E4%B9%8B%E5%90%8E%E5%B1%8F%E5%B9%95%E9%A1%BF%E5%8D%A1/</url>

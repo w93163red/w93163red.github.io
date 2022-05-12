@@ -178,6 +178,52 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2022/05/12/debian-rustdesk-server-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" target="_self">
+          debian rustdesk-server 开机自启动
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/12/debian-rustdesk-server-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" target="_self">
+          
+          
+            
+          
+          
+clone rustdesk-server-demo https://github.com/rustdesk/rustdesk-server-demo.git
+提前编译好 cargo build
+写一个脚本 run_rustserver.sh ，内容如下：IP=192.168.50.77  /home/ling/code/rustdesk-server-demo/target/debug/rus
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-12 09:59" pubdate>
+              2022-05-12
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/linux/">linux</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2022/05/12/debian-%E8%A7%A3%E5%86%B3%E7%9B%92%E7%9B%96%E4%B9%8B%E5%90%8E%E5%B1%8F%E5%B9%95%E9%A1%BF%E5%8D%A1/" target="_self">
           debian 解决盒盖之后屏幕顿卡
         </a>
@@ -621,62 +667,6 @@ cargo vendor
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/Linux/">Linux</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/08/08/OpenSSL-%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81cheat-sheet/" target="_self">
-          OpenSSL 证书验证cheat sheet
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/08/08/OpenSSL-%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81cheat-sheet/" target="_self">
-          
-          
-            
-          
-          记录一下自己日常开发时候用到的关于OpenSSL 常用的一些命令:
-
-查看证书的相关信息
-1openssl x509 -in ca.pem -text -noout
-查看证书链的所有证书，并全部打印
-1openssl crl2pkcs7 -nocrl -certfile bundle.0.pem | openssl pkcs7 -print_certs -text -noout
-命令行来验证证书链
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-08 15:56" pubdate>
-              2021-08-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/OpenSSL/">OpenSSL</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/OpenSSL/">OpenSSL</a>
             
           </div>
         
