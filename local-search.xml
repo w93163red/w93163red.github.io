@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>debian 解决盒盖之后屏幕顿卡</title>
+    <link href="/2022/05/12/debian-%E8%A7%A3%E5%86%B3%E7%9B%92%E7%9B%96%E4%B9%8B%E5%90%8E%E5%B1%8F%E5%B9%95%E9%A1%BF%E5%8D%A1/"/>
+    <url>/2022/05/12/debian-%E8%A7%A3%E5%86%B3%E7%9B%92%E7%9B%96%E4%B9%8B%E5%90%8E%E5%B1%8F%E5%B9%95%E9%A1%BF%E5%8D%A1/</url>
+    
+    <content type="html"><![CDATA[<ol><li>安装nvidia-driver <code>sudo apt install nvidia-driver</code></li><li>在<code>/etc/environment</code>下添加 <code>LIBGL_DRI3_DISABLE=true</code></li><li>重启</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>debian NUC 修复没有声音 (Only dummy output)</title>
     <link href="/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/"/>
     <url>/2022/03/22/debian-NUC-%E4%BF%AE%E5%A4%8D%E6%B2%A1%E6%9C%89%E5%A3%B0%E9%9F%B3/</url>
