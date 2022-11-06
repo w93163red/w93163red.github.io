@@ -53,6 +53,9 @@ https://www.jetbrains.com/help/idea/import-project-from-eclipse-page-1.html#impo
 
 ![screenshot](/img/jpf-modules-jpf-core.png)
 
+![screenshot](/img/jpf-modules-jpf-core-2.png)
+
+
 ![screenshot](/img/jpf-symbc.png)
 
 ![screenshot](/img/jpf-lib.png)
