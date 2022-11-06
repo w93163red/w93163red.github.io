@@ -44,24 +44,24 @@ extensions = ${jpf-core},${jpf-symbc}
 cd jpf-core
 gradle build
 ```
-![screenshot](/img/jpf-path.png)
+![路径](/img/jpf-path.png)
 
 4. 然后intellij import jpf-symbc，在import成功过后，import jpf-core as modules
 https://www.jetbrains.com/help/idea/import-project-from-eclipse-page-1.html#import-project
 
-![screenshot](/img/jpf-import-project.png)
+![intellij 导入项目](/img/jpf-import-project.png)
 
 最后项目结构应该长这样：
-![screenshot](/img/jpf-project-structure.png)
+![项目结构](/img/jpf-project-structure.png)
 
 
 5. 对于jpf-symbc 的project structure 配置成如下这样
 
-![screenshot](/img/jpf-modules-jpf-core.png)
+![jpf-core 配置截图1](/img/jpf-modules-jpf-core.png)
 
-![screenshot](/img/jpf-modules-jpf-core-2.png)
+![jpf-core 配置截图2](/img/jpf-modules-jpf-core-2.png)
 
 
-![screenshot](/img/jpf-symbc.png)
+![jpf-symbc 配置截图1](/img/jpf-symbc.png)
 
-![screenshot](/img/jpf-lib.png)
+![jpf lib 配置截图](/img/jpf-lib.png)
