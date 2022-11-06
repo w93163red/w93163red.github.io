@@ -9,6 +9,12 @@ jpf-core: https://github.com/javapathfinder/jpf-core
 
 jpf-symbc: https://github.com/SymbolicPathFinder/jpf-symbc
 
+我改了一下中间不能跑的intellij代码，也上传了idea的相关配置，路径需要根据自己的机器环境进行配置
+
+https://github.com/w93163red/jpf-core
+
+https://github.com/w93163red/jpf-symbc
+
 
 记录一下配置java pathfinder 和 symbolic javapathfinder的过程。
 
