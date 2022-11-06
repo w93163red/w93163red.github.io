@@ -65,3 +65,6 @@ https://www.jetbrains.com/help/idea/import-project-from-eclipse-page-1.html#impo
 ![jpf-symbc 配置截图1](/img/jpf-symbc.png)
 
 ![jpf lib 配置截图](/img/jpf-lib.png)
+
+
+6. 在jpf-symbc下项目路径下`ant build` 出jar包，然后在RunJPF 下跑这个项目
