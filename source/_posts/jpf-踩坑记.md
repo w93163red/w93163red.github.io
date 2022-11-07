@@ -5,6 +5,8 @@ tags:
     - concolic execution
     - java pathfinder
 ---
+
+# 安装
 jpf-core: https://github.com/javapathfinder/jpf-core
 
 jpf-symbc: https://github.com/SymbolicPathFinder/jpf-symbc
@@ -68,3 +70,14 @@ https://www.jetbrains.com/help/idea/import-project-from-eclipse-page-1.html#impo
 
 
 6. 在jpf-symbc下项目路径下`ant build` 出jar包，然后在RunJPF 下跑这个项目
+
+# 实际运行
+
+坑还是很多的。需要一个一个修，symbc自己提供的example都跑不了……我吐了。
+
+![运行配置](/img/run.png)
+
+在运行配置时，需要按照上图先跑ant build，把symbc build之后再运行jpf-core里面的main函数。
+
+大概流程是：symbc会把自己的listener注册到jpf-core当中，jpf-core在跑到一些stage时候，会notify listener，发送对应的时间让各listener去做相应的处理，然后再返回回来。
+
