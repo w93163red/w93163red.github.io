@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      324 字
+      439 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      5
        分钟
     </span>
   
@@ -228,7 +228,7 @@
             <h1 style="display: none">java pathfinder + symbc 踩坑记</h1>
             
             <div class="markdown-body">
-              <p>jpf-core: <a target="_blank" rel="noopener" href="https://github.com/javapathfinder/jpf-core">https://github.com/javapathfinder/jpf-core</a></p>
+              <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>jpf-core: <a target="_blank" rel="noopener" href="https://github.com/javapathfinder/jpf-core">https://github.com/javapathfinder/jpf-core</a></p>
 <p>jpf-symbc: <a target="_blank" rel="noopener" href="https://github.com/SymbolicPathFinder/jpf-symbc">https://github.com/SymbolicPathFinder/jpf-symbc</a></p>
 <p>我改了一下中间不能跑的intellij代码，也上传了idea的相关配置，路径需要根据自己的机器环境进行配置</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/w93163red/jpf-core">https://github.com/w93163red/jpf-core</a></p>
@@ -262,6 +262,10 @@
 <ol start="6">
 <li>在jpf-symbc下项目路径下<code>ant build</code> 出jar包，然后在RunJPF 下跑这个项目</li>
 </ol>
+<h1 id="实际运行"><a href="#实际运行" class="headerlink" title="实际运行"></a>实际运行</h1><p>坑还是很多的。需要一个一个修，symbc自己提供的example都跑不了……我吐了。</p>
+<p><img src="/img/run.png" srcset="/img/loading.gif" lazyload alt="运行配置"></p>
+<p>在运行配置时，需要按照上图先跑ant build，把symbc build之后再运行jpf-core里面的main函数。</p>
+<p>大概流程是：symbc会把自己的listener注册到jpf-core当中，jpf-core在跑到一些stage时候，会notify listener，发送对应的时间让各listener去做相应的处理，然后再返回回来。</p>
 
             </div>
             <hr>
