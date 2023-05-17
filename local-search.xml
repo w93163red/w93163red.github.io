@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>hyper-v ubuntu 硬盘扩容</title>
+    <link href="/2023/05/17/hyper-v-ubuntu-%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/"/>
+    <url>/2023/05/17/hyper-v-ubuntu-%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9/</url>
+    
+    <content type="html"><![CDATA[<p>在hyper-v设置硬盘扩容之后，在Linux下操作：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install cloud-guest-utils<br>sudo growpart /dev/sda 1<br>sudo resize2fs /dev/sda1<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+      <tag>Hyper-V</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>java pathfinder + symbc 踩坑记</title>
     <link href="/2022/11/05/jpf-%E8%B8%A9%E5%9D%91%E8%AE%B0/"/>
     <url>/2022/11/05/jpf-%E8%B8%A9%E5%9D%91%E8%AE%B0/</url>
