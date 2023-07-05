@@ -178,6 +178,50 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/07/04/docker-compose-%E8%B0%83%E8%AF%95%E6%97%B6%E5%8D%A1%E4%BD%8Fservice-%E4%B8%8D%E8%AE%A9%E9%80%80%E5%87%BA/" target="_self">
+          docker compose 调试时卡住service 不让退出
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2023/07/04/docker-compose-%E8%B0%83%E8%AF%95%E6%97%B6%E5%8D%A1%E4%BD%8Fservice-%E4%B8%8D%E8%AE%A9%E9%80%80%E5%87%BA/" target="_self">
+          
+          
+            
+          
+          在service的下方加入这两行：
+12tty: truecommand: tail -F /dev/null
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-04 20:40" pubdate>
+              2023-07-04
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/docker/">docker</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/21/ubuntu-22-04-sogou-%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%8D%E6%98%BE%E7%A4%BA%E8%BE%93%E5%85%A5%E6%A1%86/" target="_self">
           ubuntu 22.04 sogou 拼音输入法不显示输入框
         </a>
@@ -593,59 +637,6 @@ sudo update-alternatives --install &quot;/usr/bin/java&quot; &quot;java&quot; &q
               <a href="/tags/Linux/">Linux</a>
             
               <a href="/tags/Java/">Java</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/10/11/cargo-vendor%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96/" target="_self">
-          cargo vendor更新依赖
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/10/11/cargo-vendor%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96/" target="_self">
-          
-          
-            
-          
-          假设是一个git 依赖，私有源需CARGO_NET_GIT_FETCH_WITH_CLI=true:
-
-cargo update -p [package] –precise [commit-id]
-cargo vendor
-
-非git依赖:
-
-cargo update -p [package]
-cargo vendor
-
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-10-11 15:51" pubdate>
-              2021-10-11
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/rust/">rust</a>
             
           </div>
         
