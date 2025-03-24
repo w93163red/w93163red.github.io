@@ -37,7 +37,11 @@ WSL2 下的tigervnc 配置和正常虚拟机下的略有不同。需要调整一
 3.  注册systemd服务 `sudo cp /usr/lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service`
 4.  配置自动启动`sudo systemctl enable vncserver@:1.service`
 5.  验证下vncserver是否正确启动`sudo lsof -i` 。如果没有修改的话，看到590x 即成功。
-
+6. 关闭WSLg。在windows下 `%USERPROFILE$\.wslconfig`，添加如下的行：
+```
+[wsl2]
+guiApplications=false
+```
 ## Reference
 
 [TigerVNC - ArchWiki](https://wiki.archlinux.org/title/TigerVNC)
