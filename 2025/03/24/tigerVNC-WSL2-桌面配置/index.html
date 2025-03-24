@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      347 字
+      366 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      6
        分钟
     </span>
   
@@ -242,8 +242,10 @@
 <li> 注册systemd服务 <code>sudo cp /usr/lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service</code></li>
 <li> 配置自动启动<code>sudo systemctl enable vncserver@:1.service</code></li>
 <li> 验证下vncserver是否正确启动<code>sudo lsof -i</code> 。如果没有修改的话，看到590x 即成功。</li>
+<li>关闭WSLg。在windows下 <code>%USERPROFILE$\.wslconfig</code>，添加如下的行：<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[wsl2]</span><br><span class="hljs-attr">guiApplications</span>=<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2></li>
 </ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/TigerVNC">TigerVNC - ArchWiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/TigerVNC">TigerVNC - ArchWiki</a></p>
 <p><a target="_blank" rel="noopener" href="https://docs.redhat.com/zh-cn/documentation/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-tigervnc#sec-configuring-vncserver-2users">第 13 章 tigervnc | Red Hat Product Documentation</a></p>
 
             </div>
