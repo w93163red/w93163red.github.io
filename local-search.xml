@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>tigerVNC+WSL2 桌面配置</title>
+    <link href="/2025/03/24/tigerVNC-WSL2-%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/"/>
+    <url>/2025/03/24/tigerVNC-WSL2-%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p>WSL2 下的tigervnc 配置和正常虚拟机下的略有不同。需要调整一下色深的设定来避免部分Desktop Environment 颜色的问题。</p><ol><li> 下载最新的tigervnc 版本 （1.5.0 开始支持鼠标前后键的返回和前进）并安装<a href="https://github.com/TigerVNC/tigervnc/releases/tag/v1.15.0">Release TigerVNC 1.15.0 · TigerVNC/tigervnc</a></li><li>按照ArchWiki的2.1走:For a quick start, see the steps below. Users are encouraged to read <a href="https://man.archlinux.org/man/vncserver.8"><strong>vncserver(8)</strong></a> for the complete list of configuration options.<ol><li> Create a password using <code>vncpasswd</code> which will store the hashed password in <code>$XDG_CONFIG_HOME/tigervnc/passwd</code>. Ensure the file’s permission is set to <code>0600</code>. If creating vncserver access for another user, you must be logged in as that user before running vncpasswd.</li><li> Edit <code>/etc/tigervnc/vncserver.users</code> to define user mappings. Each user defined in this file will have a corresponding port on which its session will run. The number in the file corresponds to a TCP port. By default, :1 is TCP port 5901 (5900+1). If another parallel server is needed, a second instance can then run on the next highest, free port, i.e 5902 (5900+2).</li><li> Create <code>$XDG_CONFIG_HOME/tigervnc/config</code> and at a minimum, define the type of session desired with a line like <code>session=foo</code> where foo corresponds to whichever <a href="https://wiki.archlinux.org/title/Desktop_environment"><strong>desktop environment</strong></a> is to run. One can see which desktop environments are available on the system by seeing their corresponding <em>.desktop</em> files within <code>/usr/share/xsessions/</code>. For example:</li></ol> <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">session</span>=lxqt<br><span class="hljs-attribute">geometry</span>=1920x1080<br>localhost<br>alwaysshared<br></code></pre></td></tr></table></figure> 我自己的配置 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">session</span>=gnome<br><span class="hljs-attribute">geometry</span>=1920x1080<br><span class="hljs-attribute">depth</span>=32<br>localhost<br>alwaysshared<br></code></pre></td></tr></table></figure></li><li> 注册systemd服务 <code>sudo cp /usr/lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service</code></li><li> 配置自动启动<code>sudo systemctl enable vncserver@:1.service</code></li><li> 验证下vncserver是否正确启动<code>sudo lsof -i</code> 。如果没有修改的话，看到590x 即成功。</li></ol><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://wiki.archlinux.org/title/TigerVNC">TigerVNC - ArchWiki</a></p><p><a href="https://docs.redhat.com/zh-cn/documentation/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-tigervnc#sec-configuring-vncserver-2users">第 13 章 tigervnc | Red Hat Product Documentation</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>docker compose 调试时卡住service 不让退出</title>
     <link href="/2023/07/04/docker-compose-%E8%B0%83%E8%AF%95%E6%97%B6%E5%8D%A1%E4%BD%8Fservice-%E4%B8%8D%E8%AE%A9%E9%80%80%E5%87%BA/"/>
     <url>/2023/07/04/docker-compose-%E8%B0%83%E8%AF%95%E6%97%B6%E5%8D%A1%E4%BD%8Fservice-%E4%B8%8D%E8%AE%A9%E9%80%80%E5%87%BA/</url>

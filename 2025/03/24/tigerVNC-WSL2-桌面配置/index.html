@@ -18,9 +18,25 @@
   <meta name="author" content="LinG">
   <meta name="keywords" content="">
   
-  <title>归档 - LinG Notes</title>
+  <title>tigerVNC+WSL2 桌面配置 - LinG Notes</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,9 +163,46 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="tigerVNC+WSL2 桌面配置">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-03-24 14:26" pubdate>
+        2025年3月24日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      347 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -162,40 +215,105 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 18 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2023</p>
-    
-    <a href="/2023/07/04/docker-compose-%E8%B0%83%E8%AF%95%E6%97%B6%E5%8D%A1%E4%BD%8Fservice-%E4%B8%8D%E8%AE%A9%E9%80%80%E5%87%BA/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">docker compose 调试时卡住service 不让退出</span>
-      <time style="float: right;">07-04</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">tigerVNC+WSL2 桌面配置</h1>
+            
+            <div class="markdown-body">
+              <p>WSL2 下的tigervnc 配置和正常虚拟机下的略有不同。需要调整一下色深的设定来避免部分Desktop Environment 颜色的问题。</p>
+<ol>
+<li> 下载最新的tigervnc 版本 （1.5.0 开始支持鼠标前后键的返回和前进）并安装<a target="_blank" rel="noopener" href="https://github.com/TigerVNC/tigervnc/releases/tag/v1.15.0">Release TigerVNC 1.15.0 · TigerVNC/tigervnc</a></li>
+<li>按照ArchWiki的2.1走:For a quick start, see the steps below. Users are encouraged to read <a target="_blank" rel="noopener" href="https://man.archlinux.org/man/vncserver.8"><strong>vncserver(8)</strong></a> for the complete list of configuration options.<ol>
+<li> Create a password using <code>vncpasswd</code> which will store the hashed password in <code>$XDG_CONFIG_HOME/tigervnc/passwd</code>. Ensure the file’s permission is set to <code>0600</code>. If creating vncserver access for another user, you must be logged in as that user before running vncpasswd.</li>
+<li> Edit <code>/etc/tigervnc/vncserver.users</code> to define user mappings. Each user defined in this file will have a corresponding port on which its session will run. The number in the file corresponds to a TCP port. By default, :1 is TCP port 5901 (5900+1). If another parallel server is needed, a second instance can then run on the next highest, free port, i.e 5902 (5900+2).</li>
+<li> Create <code>$XDG_CONFIG_HOME/tigervnc/config</code> and at a minimum, define the type of session desired with a line like <code>session=foo</code> where foo corresponds to whichever <a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Desktop_environment"><strong>desktop environment</strong></a> is to run. One can see which desktop environments are available on the system by seeing their corresponding <em>.desktop</em> files within <code>/usr/share/xsessions/</code>. For example:</li>
+</ol>
+ <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">session</span>=lxqt<br><span class="hljs-attribute">geometry</span>=1920x1080<br>localhost<br>alwaysshared<br></code></pre></td></tr></table></figure>
+ 我自己的配置 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">session</span>=gnome<br><span class="hljs-attribute">geometry</span>=1920x1080<br><span class="hljs-attribute">depth</span>=32<br>localhost<br>alwaysshared<br></code></pre></td></tr></table></figure>
+</li>
+<li> 注册systemd服务 <code>sudo cp /usr/lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service</code></li>
+<li> 配置自动启动<code>sudo systemctl enable vncserver@:1.service</code></li>
+<li> 验证下vncserver是否正确启动<code>sudo lsof -i</code> 。如果没有修改的话，看到590x 即成功。</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/TigerVNC">TigerVNC - ArchWiki</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.redhat.com/zh-cn/documentation/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-tigervnc#sec-configuring-vncserver-2users">第 13 章 tigervnc | Red Hat Product Documentation</a></p>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Linux/">Linux</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/04/docker-compose-%E8%B0%83%E8%AF%95%E6%97%B6%E5%8D%A1%E4%BD%8Fservice-%E4%B8%8D%E8%AE%A9%E9%80%80%E5%87%BA/">
+                        <span class="hidden-mobile">docker compose 调试时卡住service 不让退出</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -275,9 +393,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
